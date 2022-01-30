@@ -1,0 +1,114 @@
+<html>
+  <link
+    href="../static/styles/download-style.css"
+    rel="stylesheet"
+    type="text/css"
+  />
+  <link rel="shortcut icon" href="{{ url_for('static', filename='img/favicon.ico') }}">
+  <link
+    href="https://cdn.datatables.net/1.10.22/css/jquery.dataTables.min.css"
+    rel="stylesheet"
+    type="text/css"
+  />
+  <meta http-equiv='cache-control' content='no-cache'> 
+  <meta http-equiv='expires' content='0'> 
+  <meta http-equiv='pragma' content='no-cache'>
+  <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+  <script src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
+  <header>
+    <div class="container">
+      <div class="header-left">
+        <img
+          class="logohead"
+          src="{{ url_for('static', filename='img/quippo.jpg') }}"
+        />
+        <a>MyApp</a>
+      </div>
+
+      <div class="header-right">
+        <a style='text-overflow: ellipsis;overflow: hidden; width: 300px; white-space: nowrap'>{{ creds.group }}: {{ creds.name }}</a>
+        <a style='text-overflow: ellipsis;overflow: hidden; width: 350px; white-space: nowrap'>Info: {{ creds.phone }}</a>
+        <a href="/dashboard">Dashboard</a>
+        <a href="/logout">Log Out</a>
+      </div>
+    </div>
+  </header>
+
+  <div name="idtoken" id="{{ creds.idtoken }}" style="display:none"></div>
+  <div name="s3key" id="{{ creds.s3key }}" style="display:none"></div>
+  <div name="s3secret" id="{{ creds.s3secret }}" style="display:none"></div>
+  <div name="s3token" id="{{ creds.s3token }}" style="display:none"></div>
+  <div name="group" id="{{ creds.group }}" style="display:none"></div>
+  <div name="invoiceurl" id="{{ creds.invoiceurl }}" style="display:none"></div>
+  <div name="username" id="{{ creds.username }}" style="display:none"></div>
+
+  <div class="box">
+    <h2>List of Invoices:</h2>
+    
+    <label for="searchFrom">From: </label>
+    <input id="searchFrom" class="searchInput" type="date" placeholder="From"/>
+    <label for="searchTo">To: </label>
+    <input id="searchTo" class="searchInput" type="date" placeholder="To" >
+    <table id="myTable">
+      <thead>  
+        <tr>
+          <th><input type="checkbox" id="selectall" onclick='checkall()' value='select'></th>
+          <th>Vendor Name</th>
+          <th>Invoice Number</th>
+          <th>Invoice Amount</th>
+          <th>Invoice Date</th>
+          <th>Uploaded Date</th>
+          <th>Downloaded Date</th>
+          <th>Details</th>
+        </tr>
+      </thead>
+      <tbody class = "mainBody">
+      {% for r in records %}
+      <tr name="details">
+        <td><input type="checkbox" id="{{ r.UUID }}.{{ r.fileType }} {{ r.username }} {{ r.uploadDateTime }}" name="mycheckboxes"></td>
+        <td>{{ r.name }}</td>
+        <td>{{ r.invoiceNo }}</td>
+        <td>{{ r.invoiceAmount }}</td>
+        <td>{{ r.date }}</td>
+        <td>{{ r.uploadDateTime }}</td>
+        <td>{{ r.downloadDate }}</td>
+        <td><button class="detailsbtn" id="{{ r.UUID }}.{{ r.fileType }} {{ r.username }} {{ r.uploadDateTime }}" name="uuidKeys">View Details</button></td>
+      </tr>
+      <!-- The Modal -->
+      <div name="myModal" id="myModal {{ r.UUID }}" class="myModal">
+        <!-- Modal content -->
+        <div class="modal-content">
+          <div class="modal-header">
+            <span class="close" id="span {{ r.UUID }}">&times;</span>
+            <h1>Invoice Details</h1>
+          </div>
+          <div class="modal-body">
+            <p><b>Upload ID:</b> {{ r.UUID }}</p>
+            <p><b>Vendor Name:</b> {{ r.name }}</p>
+            <p><b>Invoice Number:</b> {{ r.invoiceNo }}</p>
+            <p><b>Invoice Amount:</b> {{ r.invoiceAmount }}</p>
+            <p><b>Date of Invoice:</b> {{ r.date }}</p>
+            <p><b>Date of Upload:</b> {{ r.uploadDateTime }}</p>
+            <p><b>File Type:</b> {{ r.fileType }}</p>
+            <p><b>Downloaded:</b> {{ r.downloaded }}</p>
+            <p><b>Download Info:</b> Downloaded by {{ r.downloadedBy }} on {{ r.downloadDate }}</p>
+          </div>
+          <div class="modal-footer">
+            <h3>Click to download</h3>
+            <button class="btn" id="d {{ r.UUID }}" name="download">Download File</button>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+      </tbody>
+    </table>
+    <hr>
+    <button class="btn" id="downloadmultiple" name="download-files" onclick="doClick()">Download File(s)</button>
+  </div>
+
+  <script src="https://sdk.amazonaws.com/js/aws-sdk-2.783.0.min.js"></script>
+  <script src="{{ url_for('static', filename='js/jszip.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/FileSaver.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/jszip-utils.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/downloads-page-script.js') }}"></script>
+</html>

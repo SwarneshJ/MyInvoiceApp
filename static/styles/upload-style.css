@@ -1,0 +1,113 @@
+body {
+  font-family: "Open Sans", sans-serif;
+  background: white;
+  margin: 0 auto 0 auto;
+  width: 100%;
+  text-align: center;
+  margin: 20px 0px 20px 0px;
+}
+
+.header-left a {
+  font-size: 20px;
+  line-height: 65px;
+  padding: 0 15px;
+  color: white;
+  float: right;
+  font-weight: bold;
+  transition: all 0.5s;
+}
+
+.logohead {
+  width: 50px;
+  margin-top: 17px;
+  background-color: white;
+}
+
+.container {
+  max-width: 1170px;
+  width: 100%;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+
+header {
+  height: 65px;
+  width: 100%;
+  background-color: rgba(34, 49, 52, 0.9);
+  position: fixed;
+  top: 0;
+  z-index: 10;
+}
+
+.header-left {
+  float: left;
+}
+
+.header-right {
+  float: right;
+  margin-right: -25px;
+}
+
+.header-right a {
+  line-height: 65px;
+  font-size: 20px;
+  padding: 0 25px;
+  color: white;
+  display: block;
+  float: left;
+  transition: all 0.5s;
+}
+
+.header-right a:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.logo-left {
+  float: left;
+  width: 25%;
+  margin: 300px auto auto auto;
+}
+
+.logo-right {
+  float: right;
+  width: 25%;
+  margin: 300px auto auto auto;
+}
+
+.box {
+  background: white;
+  float: left;
+  width: 49%;
+  border-radius: 6px;
+  margin: 130px auto auto auto;
+  padding: 30px 0px 70px 0px;
+  border: black 4px solid;
+}
+
+#fileSelect {
+  background: #447aca;
+  width: 250px;
+  padding: 8px;
+  color: white;
+  border-radius: 4px;
+  border: #2734ae 2px solid;
+  margin: 40px 20px;
+  font-weight: 800;
+  font-size: 0.8em;
+}
+
+#query_submit {
+  background: #2ecc71;
+  width: 250px;
+  padding: 8px;
+  color: white;
+  border-radius: 4px;
+  border: #27ae60 2px solid;
+  margin: 40px 20px;
+  font-weight: 800;
+  font-size: 0.8em;
+}
+
+.btn:hover {
+  background: #2cc06b;
+}

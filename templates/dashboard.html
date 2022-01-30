@@ -1,0 +1,58 @@
+<html>
+  <link
+    href="../static/styles/dashboard.css"
+    rel="stylesheet"
+    type="text/css"
+  />
+  <link rel="shortcut icon" href="{{ url_for('static', filename='img/favicon.ico') }}">
+  <meta http-equiv='cache-control' content='no-cache'> 
+  <meta http-equiv='expires' content='0'> 
+  <meta http-equiv='pragma' content='no-cache'>
+  <header>
+    <div class="container">
+      <div class="header-left">
+        <img
+          class="logohead"
+          src="{{ url_for('static', filename='img/quippo.jpg') }}"
+        />
+        <a>MyApp</a>
+      </div>
+
+      <div class="header-right">
+        <a style='text-overflow: ellipsis;overflow: hidden; width: 300px; white-space: nowrap'>{{ group }}: {{ name }}</a>
+        <a style='text-overflow: ellipsis;overflow: hidden; width: 350px; white-space: nowrap'>Info: {{ phone }}</a>
+        <a href="/logout">Log Out</a>
+      </div>
+    </div>
+  </header>
+  <div>
+    <div class="logo-left">
+      <img
+        src="{{ url_for('static', filename='img/quippo.jpg') }}"
+        width = 200
+      />
+    </div>
+
+    <div class="flex-container">
+
+      <div class="flex-child magenta">
+        <form action="/upload">
+          <button class="btn"><h2>Click here to go to Upload Files section: <p>&#8593</p></h2></button>
+        </form>
+      </div>
+      <div class="flex-child green">
+        <form action="/download">
+          <button class="btn"><h2>Click here to go to Download Files section: <p>&#8595</p></h2></button>
+        </form>
+      </div>
+      
+    </div>
+    <!-- End Box -->
+    <div class="logo-right">
+      <img
+        src="{{ url_for('static', filename='img/quippo.jpg') }}"
+        width = 200
+      />
+    </div>
+  </div>
+</html>

@@ -1,0 +1,206 @@
+body {
+  font-family: "Open Sans", sans-serif;
+  background: white;
+  margin: 0 auto 0 auto;
+  width: 100%;
+  text-align: center;
+  margin: 20px 0px 20px 0px;
+}
+
+.header-left a {
+  font-size: 20px;
+  line-height: 65px;
+  padding: 0 15px;
+  color: white;
+  float: right;
+  font-weight: bold;
+  transition: all 0.5s;
+}
+
+.logohead {
+  width: 50px;
+  margin-top: 17px;
+  background-color: white;
+}
+
+.container {
+  max-width: 1170px;
+  width: 100%;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+
+header {
+  height: 65px;
+  width: 100%;
+  background-color: rgba(34, 49, 52, 0.9);
+  position: fixed;
+  top: 0;
+  z-index: 10;
+}
+
+.header-left {
+  float: left;
+}
+
+.header-right {
+  float: right;
+  margin-right: -25px;
+}
+
+.header-right a {
+  line-height: 65px;
+  font-size: 20px;
+  padding: 0 25px;
+  color: white;
+  display: block;
+  float: left;
+  transition: all 0.5s;
+}
+
+.header-right a:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+h2 {
+  font-size: 1.5em;
+  color: #525252;
+}
+
+.box {
+  /* float: left; */
+  background: white;
+  width: 95%;
+  border-radius: 6px;
+  margin: 120px auto 0 auto;
+  padding: 30px 0px 70px 0px;
+  border: black 4px solid;
+}
+
+.btn {
+  background: #2ecc71;
+  width: 250px;
+  padding: 8px;
+  color: white;
+  border-radius: 4px;
+  border: #27ae60 1px solid;
+  margin: 20px auto;
+  font-weight: 800;
+  font-size: 0.8em;
+}
+
+.btn:hover {
+  background: #2cc06b;
+  cursor: pointer;
+}
+
+.detailsbtn {
+  background: #5fd691;
+  width: 250px;
+  padding: 8px;
+  color: white;
+  border-radius: 4px;
+  border: #27ae60 1px solid;
+  font-weight: 800;
+  font-size: 0.8em;
+}
+
+.detailsbtn:hover {
+  background: #2cc06b;
+  cursor: pointer;
+}
+
+.myModal {
+  display: none; /* Hidden by default */
+  margin-top: 65px;
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
+
+/* Modal Header */
+.modal-header {
+  padding: 2px 16px;
+  background-color: #6950c5;
+  color: white;
+}
+
+/* Modal Body */
+.modal-body {
+  padding: 2px 16px;
+  background-color: white;
+}
+
+/* Modal Footer */
+.modal-footer {
+  padding: 2px 16px;
+  background-color: rgb(176, 70, 224);
+  color: white;
+}
+
+/* Modal Content */
+.modal-content {
+  position: relative;
+  background-color: #fefefe;
+  margin: auto;
+  padding: 0;
+  border: 1px solid #888;
+  width: 80%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  animation-name: animatetop;
+  animation-duration: 0.4s;
+}
+
+/* Add Animation */
+@keyframes animatetop {
+  from {
+    top: -300px;
+    opacity: 0;
+  }
+  to {
+    top: 0;
+    opacity: 1;
+  }
+}
+
+/* The Close Button */
+.close {
+  color: black;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: red;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* table */
+table {
+  border-spacing: 0;
+  width: 100%;
+  border: 1px solid #ddd;
+}
+
+th {
+  cursor: pointer;
+}
+
+th,
+td {
+  text-align: center;
+  padding: 16px;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
