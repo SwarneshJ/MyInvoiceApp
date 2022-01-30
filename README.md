@@ -20,7 +20,7 @@ There are two types of users - Accountant and Vendor
 he/she can also view the files uploaded by him/her from the "Downloads" screen.
 2. An accountant can view all the invoices uploaded on the portal by the vendors, view their details and download those files.
 
-![alt text](https://github.com/SwarneshJ/MyInvoiceApp/blob/9afb5c36bd5bbe077ce02a07a756b5a33da2fe00/screenshots/Capture.JPG?raw=true)
+![alt text](https://github.com/SwarneshJ/MyInvoiceApp/blob/c0ebe8ae7f6cbd9634f2306918d6b91985cc63f2/screenshots/Capture.JPG?raw=true)
 
 User also has the option to download multiple files together in a zip format by selecting all the checkboxes.
 
