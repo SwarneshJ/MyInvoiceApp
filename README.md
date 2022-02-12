@@ -1,4 +1,4 @@
-# MyInvoiceApp
+# Invoice Management Portal
 A flask based application hosted on AWS for uploading and downloading invoices with role based login
 
 ![alt text](https://github.com/SwarneshJ/MyInvoiceApp/blob/9afb5c36bd5bbe077ce02a07a756b5a33da2fe00/screenshots/Capture3.JPG?raw=true)
