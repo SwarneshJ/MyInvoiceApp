@@ -1,5 +1,5 @@
 # Invoice Management Portal
-Python(Flask), Javascript, HTML, CSS | GitHub
+Python(Flask), Javascript, HTML, CSS
 
 This repository contains a flask based web application hosted on AWS ElasticBeanstalk for uploading and downloading invoices to S3 bucket with role based login functionality. User access to S3 is provided by generating temporary STS credentials to upload / download files for logged in users.
 
